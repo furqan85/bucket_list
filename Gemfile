@@ -24,7 +24,7 @@ gem 'jquery-rails'
 #mv login functionality
 gem 'omniauth'
 gem 'omniauth-mindvalley', :git => 'git://github.com/mindvalley/omniauth-mindvalley.git'
-
+gem 'twitter-bootstrap-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
