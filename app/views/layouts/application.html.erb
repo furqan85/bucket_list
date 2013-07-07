@@ -1,20 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BucketList</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<header>
-  <div id="header">
-    <div class="logo">
-      <a href="http://www.mindvalley.com"><img src="/assets/logo-mindvalley.png"></a>
-    </div>
-  </div>
-</header>
-<%= yield %>
+<html lang="en">
+  <head>
+    <title>Mindvalley 3 MIQ's</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <div class="nopadding avgrund-contents">
+      <div class="row-fluid">
+        <div class="span12">
+          <div id='header'>
+            <div class='logo'>
+              <a href='http://www.mindvalley.com'><img src='/assets/logo-mindvalley.png' /></a>
+              <%= link_to "Login", '/auth/mindvalley', class: 'right' unless current_user %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="container-fluid" id="container">
+          <div class="row-fluid">
+            <div class="span3 leftmenu">
+            </div>
+
+            <div class="span9" id="content">
+              <div class="row-fluid">
+
+                <div class="span12">
+                  <div class="row-fluid">
+                    <div class="span12">
+                      <%= yield %>
+                    </div>
+                  </div>
+
+                </div><!-- span12 -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explorer canvas, for IE6-8 support of canvas elements -->
+    <!--[if lt IE 9]>
+        <script src="js/excanvas.min.js"></script>
+    <![endif]-->
+
+  </body>
 </html>
+

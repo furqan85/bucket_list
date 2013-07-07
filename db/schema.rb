@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130706064042) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "uid"
+    t.integer  "uid"
     t.string   "provider"
     t.string   "authentication_token"
     t.datetime "created_at",           :null => false

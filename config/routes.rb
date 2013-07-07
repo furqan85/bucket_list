@@ -1,5 +1,12 @@
 BucketList::Application.routes.draw do
+  match '/users/:id' => 'users#show', :as => :profile
+  match '/logout' => 'sessions#destroy', :as => :logout
+  match '/login' => 'sessions#new', :as => :login
+  match '/auth/failure' => 'sessions#show'
+  match '/auth/mindvalley/callback' => 'sessions#create'
 
+  resource :session, :only => [:new, :create, :destroy]
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
